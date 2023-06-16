@@ -4,17 +4,6 @@
 
 Data analysis part of the 2023 Gut_brain_axis_course-Bioinformatic_analysis - Thursday 29/06/23
 
-## Instructions 
-
-## Download and install R and Rstudio
-
-Download and install the specific version of R for your OS [here:](https://ftp.fau.de/cran/)
-(If using Windows 10/11, install [Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools42/files/rtools42-5355-5357.exe) as well) 
-
-Download and install [Rstudio](https://posit.co/download/rstudio-desktop/)
-
-Please check everything works before the course starts on Friday 17th.
-
 ## Intro-to-R 
 
 Since some of you may not have any experience using R, we will very quickly go through some key concepts to help you understand better what we will doing in the analysis section later. 
