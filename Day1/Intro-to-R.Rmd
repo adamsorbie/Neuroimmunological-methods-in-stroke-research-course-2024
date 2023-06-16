@@ -1,0 +1,182 @@
+---
+title: "Intro-to-R"
+author: "Adam Sorbie"
+date: "2023-06-15"
+output: html_document
+---
+
+# Gut_brain_axis_course - Intro to R
+
+### Mathematical operations 
+
+Addition
+```{r}
+
+```
+
+Subtraction 
+```{r}
+
+```
+
+Multiplication 
+```{r}
+
+```
+
+Division
+```{r}
+
+```
+
+Modulo 
+```{r}
+
+```
+
+Square
+```{r}
+
+``` 
+
+Comparisons
+
+```{r}
+
+``` 
+
+### Basic types 
+
+There are 6 basic data types in R: logical, numeric, integer, character, raw and complex. Today (and in general) only the first four are important. 
+
+```{r}
+class(TRUE)
+class(3.0)
+class(6L)
+class("Hello")
+```
+
+### Data structures 
+
+Four most commonly used data structures 
+
+#### 1D
+Vectors - ordered collection of data of a given length and all of the same type:
+```{r}
+
+```
+
+Lists - ordered collection of data/objects of a given length. Can be composed of heterogenous types. 
+```{r}
+
+```
+
+#### 2D 
+
+Matrices - 2D data structure (rows x columns) of the same type
+```{r}
+
+```
+
+Dataframes - 2D heterogenous data structure (rows x columns)
+```{r}
+
+```
+
+### Variable assignment 
+
+Variables are assigned in R using the ```<-``` operator. A variable can be though of a a "box" you store a value in for later use.
+
+They can be used to store a value which you want to be constant throughout your code e.g. a file name 
+```{r}
+
+```
+
+Or to save time by storing long strings/numbers 
+```{r}
+
+```
+
+Objects such as vectors and dataframes can also be stored in variables as you saw above. ```df``` and ```vector2``` are both variables. 
+
+### Control flow
+
+As well as writing individual statements like we have done above we can also use logic to control the flow of our code, allowing us to repeat bits of code or only run if a given condition is met. 
+
+for loops allow us to repeat code a specified number of times e.g.
+
+```{r}
+
+```
+
+This prints out each element in the ```vector2```variable we defined earlier. Not particularly interesting though.. 
+We will discover a more interesting use case later. 
+
+if/else statements allow us to control the flow of our code better: 
+
+```{r}
+
+```
+
+Change the values of x and y and see how the output changes. 
+
+### Functions 
+
+Functions are used to abstract repetitive code in something which is reusable and modular, making code easier to read and debug. 
+
+Using the above if else example we could create a function called ```greater_than``` which tells us which value is highest in a more modular way
+```{r}
+
+```
+
+```{r}
+
+```
+
+More interesting functions might perform a calculation for us and return the value 
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+You can also use built-in functions or install packages to access functions written by others. It's usually the case that someone has already written a function for whatever you want to do. 
+External packages can be downloaded using the ```install.packages``` function and loaded using the ```library``` function. 
+
+If you need help with a function you can also type ?functionname in the console e.g. ?log10 and the help for that function will show up, detailing what the function does, what inputs it expects and what value(s) it returns. 
+
+### Data wrangling 
+
+A few key concepts on loading and manipulating data.
+```{r}
+
+```
+
+Base R 
+
+```{r}
+
+```
+Tidyverse
+```{r}
+
+```
+
+Filtering rows 
+
+Base R 
+```{r}
+
+```
+Tidyverse
+```{r}
+
+```
+
+Filtering and selecting in one with the pipe operator 
+```{r}
+
+```

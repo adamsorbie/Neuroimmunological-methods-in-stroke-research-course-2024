@@ -1,0 +1,7 @@
+sample	treatment	tissue	condition	timepoint	strain	age
+CTR_01	control	brain	fMCAO	14d	C57BL/6	15wk
+CTR_02	control	brain	fMCAO	14d	C57BL/7	15wk
+CTR_03	control	brain	fMCAO	14d	C57BL/8	15wk
+SCFA_01	SCFA	brain	fMCAO	14d	C57BL/9	15wk
+SCFA_02	SCFA	brain	fMCAO	14d	C57BL/10	15wk
+SCFA_03	SCFA	brain	fMCAO	14d	C57BL/11	15wk
