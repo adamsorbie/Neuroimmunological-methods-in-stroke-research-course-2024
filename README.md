@@ -14,11 +14,11 @@ Download and install [Rstudio](https://posit.co/download/rstudio-desktop/)
 
 Download the course content and extract the folder. 
 
-![Alt text](img/Download_instructions.gif)  [](img/Download_instructions.gif)
+![Alt text](img/download_instructions.gif)  [](img/download_instructions.gif)
 
-Navigate to the course folder (Gut_brain_axis_course-Bioinformatic_analysis) and open the "install_packages.R" file in Rstudio. Run the code by selecting all of the code and pressing run. 
+Navigate to the course folder (Gut_brain_axis_course-Bioinformatic_analysis) and open the "install.R" file in Rstudio. Run the code by selecting all of the code and pressing run. 
 
-![Alt text](img/Download_instructions.gif)  [](img/Download_instructions.gif)
+![Alt text](img/installation_instructions.gif)  [](img/installation_instructions.gif)
 
 If everything installed successfully, you should receive the following message: 
 
