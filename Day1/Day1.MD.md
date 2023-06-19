@@ -8,15 +8,6 @@ Data analysis part of the 2023 Gut_brain_axis_course-Bioinformatic_analysis - Th
 
 Since some of you may not have any experience using R, we will very quickly go through some key concepts to help you understand better what we will doing in the analysis section later. 
 
-### Before we begin 
-
-Download the course content and extract the folder. 
-
-![Alt text](img/Download_instructions.gif)  [](img/Download_instructions.gif)
-
-Navigate to the course folder and open the "Intro-to-R.Rmd" file in Rstudio. 
-
-
 ### Mathematical operations 
 
 Type and test these operations in the console in Rstudio 
