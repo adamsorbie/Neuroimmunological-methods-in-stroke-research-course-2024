@@ -180,9 +180,27 @@ Let's run this function on the matrix we created earlier to see what it does.
 normalise(m)
 ```
 
-You can also use built-in functions or install packages to access functions written by others. It's usually the case that someone has already written a function for whatever you want to do. External packages can be downloaded using the ```install.packages``` function and loaded using the ```library``` function. 
+So far we have covered built-in functions and custom functions, but R has a huge 
+open source library of packages called CRAN, as well as a specific repository
+for bioinformatics, called bioconductor. 
+
+### Loading external function 
+
+When working with R, at some point you may find yourself requiring a specific 
+function to perform some kind of analysis and plot data etc. It's usually the 
+case that someone has already written a function for whatever you want to do
+
+You can install packages to access functions written by others. 
+External packages can be downloaded using the ```install.packages``` function 
+and loaded using the ```library``` function. Somewhat annoyingly, bioconductor
+packages are installed a little differently, and require you to first install
+the "BiocManager" package and then install using ```biocManager::install```. They
+can however be loaded as normal. 
 
 If you need help with a function you can also type ?functionname in the console e.g. ?log10 and the help for that function will show up, detailing what the function does, what inputs it expects and what value(s) it returns. 
+
+Once you get into writing your own functions, it's good practice to store them
+in a separate R file and import them using the ```source``` function. 
 
 ### Data wrangling 
 
@@ -190,8 +208,6 @@ A few key concepts on loading and manipulating data.
 
 Reading data 
 ``` r
-# install tidyverse
-install.packages("tidyverse")
 # load tidyverse
 library(tidyverse)
 # read in the palmer penguins csv file 
