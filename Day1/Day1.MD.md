@@ -287,12 +287,12 @@ source("RNAseq_functions.R")
 
 Firstly we will read in the counts file and sample metadata using the ```read_tsv``` function from "readr", part of the "tidyverse". 
 ```{r}
-counts <- read_tsv("GSE131788_counts_upload.SCFA_treatment.refseq_mm10.txt") %>% 
+counts <- read_tsv("../GSE131788_counts_upload.SCFA_treatment.refseq_mm10.txt") %>% 
   # since we require our data to be numerical we need to move the first column to the rownames
   column_to_rownames("RefSeq") %>% 
   # deseq requires our data to be in matrix form 
   as.matrix()
-metadata <- read_tsv("metadata_SCFA.txt")
+metadata <- read_tsv("../metadata_SCFA.txt")
 ```
 Next we create a summarized experiment with the count data and sample metadata we just read in. A summarized experiment is an R object commonly used by bioconductor packages which simplifies and standardises storing genomic data in R.  
 ```{r}
