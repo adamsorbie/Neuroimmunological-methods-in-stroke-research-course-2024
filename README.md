@@ -26,3 +26,7 @@ If everything installed successfully, you should receive the following message:
 
 Please check everything works before the course starts on Thursday 29thth.
 
+## Course content 
+
+[Day 1](https://github.com/adamsorbie/Gut_brain_axis_course-Bioinformatic_analysis/blob/main/Day1/Day1.MD.md)
+[Day 2](https://github.com/adamsorbie/Gut_brain_axis_course-Bioinformatic_analysis/blob/main/Day2/Day2.MD.md)
