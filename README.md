@@ -3,6 +3,10 @@ The microbiome-gut-brain axis: Concepts and methods in experimental stroke resea
 
 ## Instructions 
 
+############# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ############
+######## PLEASE INSTALL ALL SOFTWARE WELL IN ADVANCE ###########
+############# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ############
+
 ## Download and install R and Rstudio
 
 Download and install the specific version of R for your OS [here:](https://ftp.fau.de/cran/)
@@ -10,7 +14,13 @@ Download and install the specific version of R for your OS [here:](https://ftp.f
 
 Download and install [Rstudio](https://posit.co/download/rstudio-desktop/)
 
+############# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ############
+######## PLEASE INSTALL PACKAGES ON THE DAY OF THE COURSE ######
+############# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ############
+
 ### Before we begin 
+
+**Note that everything below is subject to change before the course begins on 14/02/24, please install the necessar R packages on the day of the course. 
 
 Download the course content and extract the folder. 
 
