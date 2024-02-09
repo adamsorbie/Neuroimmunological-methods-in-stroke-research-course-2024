@@ -437,3 +437,4 @@ results from above as an argument.
 ```{r}
 dotplot(ego)
 ```
+
