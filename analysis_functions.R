@@ -1,3 +1,19 @@
+pacman::p_load(
+  BiocManager,
+  tidyverse,
+  ggpubr,
+  ggsci,
+  rstatix,
+  picante,
+  phyloseq,
+  vegan,
+  ANCOMBC,
+  phangorn,
+  GUniFrac,
+  zoo,
+  mixOmics,
+  lemon
+)
 
 ######################### DATA WRANGLING #########################
 

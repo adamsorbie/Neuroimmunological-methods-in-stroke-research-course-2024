@@ -40,7 +40,7 @@ Please check everything works before the course starts on Wednesday the 14th.
 
 # Gut_brain_axis_course-Bioinformatic_analysis
 
-Data analysis part of the 2023 Gut_brain_axis_course-Bioinformatic_analysis - Wednesday 14/02/24
+Data analysis part of the 2024 Gut_brain_axis_course-Bioinformatic_analysis - Wednesday 14/02/24
 
 ## Intro-to-R 
 
@@ -286,7 +286,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Gut_brain_axis_course - Intro to RNAseq analysis
 
 Today we will perform a fairly simple analysis of RNAseq data. This dataset comes
-from another lab in our institute, AG Liesz, and was published a few years back: https://www.jneurosci.org/content/40/5/1162.long. Here the authors treated mice with short-chain fatty acids (produced by the gut microbiota) after stroke and found that it improved recovery.
+from another lab in our institute, AG Liesz, and was published in 2020: https://www.jneurosci.org/content/40/5/1162.long. Here the authors treated mice with short-chain fatty acids (produced by the gut microbiota) after stroke and found that it improved recovery.
 
 
 Load the libraries: "DESeq2", "tidyverse", "EnhancedVolcano" and "clusterProfiler". 
@@ -464,7 +464,7 @@ How do your results compare to the original publication?
 
 ## Analysis of Microbiota data
 
-Here we will perform a very streamlined analysis of 16S rRNA sequencing data. This dataset comes from our lab and was published last year [Sorbie et al, iScience 2022](https://www.sciencedirect.com/science/article/pii/S2589004222002681). 
+Here we will perform a very streamlined analysis of 16S rRNA sequencing data. This dataset comes from our lab and was published in 2022 [Sorbie et al, iScience 2022](https://www.sciencedirect.com/science/article/pii/S2589004222002681). 
 
 ## Data Analysis 
 
