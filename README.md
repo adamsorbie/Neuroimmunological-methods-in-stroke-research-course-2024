@@ -25,8 +25,6 @@ If everything installed successfully, you should receive the following message:
 
 "Installed packages successfully :)" 
 
-Please check everything works before the course starts on Wednesday the 14th.
-
 ## Course content 
 
 ## Intro-to-R 
