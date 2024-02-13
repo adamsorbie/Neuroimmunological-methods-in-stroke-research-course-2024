@@ -445,7 +445,7 @@ How do your results compare to the original publication?
 
 ## Analysis of Microbiota data
 
-Here we will perform a very streamlined analysis of 16S rRNA sequencing data. This dataset comes from our lab and was published last year [Sorbie et al, iScience 2022](https://www.sciencedirect.com/science/article/pii/S2589004222002681). 
+Here we will perform a very streamlined analysis of 16S rRNA sequencing data. This dataset comes from our lab and was published in 2022 [Sorbie et al, iScience 2022](https://www.sciencedirect.com/science/article/pii/S2589004222002681). 
 
 ## Data Analysis 
 
