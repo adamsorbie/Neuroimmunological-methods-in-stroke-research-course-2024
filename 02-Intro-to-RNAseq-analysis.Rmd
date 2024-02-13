@@ -4,9 +4,8 @@
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Gut_brain_axis_course - Intro to RNAseq analysis
 
-Today we will perform a fairly simple analysis of RNAseq data. This dataset comes
+We will now perform a fairly simple analysis of RNAseq data. This dataset comes
 from another lab in our institute, AG Liesz, and was published in 2020: https://www.jneurosci.org/content/40/5/1162.long. Here the authors treated mice with short-chain fatty acids (produced by the gut microbiota) after stroke and found that it improved recovery.
 
 

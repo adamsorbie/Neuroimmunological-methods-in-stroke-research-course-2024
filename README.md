@@ -1,11 +1,10 @@
-# Gut_brain_axis_course-Bioinformatic_analysis
-The microbiome-gut-brain axis: Concepts and methods in experimental stroke research – Bioinformatic analysis 
+# Neuroimmunological-methods-in-stroke-research 
 
 ## Instructions 
 
-############# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ############
-######## PLEASE INSTALL ALL SOFTWARE WELL IN ADVANCE ###########
-############# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ############
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+PLEASE INSTALL ALL SOFTWARE WELL IN ADVANCE
+
 
 ## Download and install R and Rstudio
 
@@ -14,9 +13,9 @@ Download and install the specific version of R for your OS [here:](https://ftp.f
 
 Download and install [Rstudio](https://posit.co/download/rstudio-desktop/)
 
-############# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ############
-######## PLEASE INSTALL PACKAGES ON THE DAY OF THE COURSE ######
-############# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ############
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ PLEASE INSTALL PACKAGES ON THE DAY OF THE COURSE
+
 
 ### Before we begin 
 
@@ -26,7 +25,7 @@ Download the course content and extract the folder.
 
 ![Alt text](img/download_instructions.gif)  [](img/download_instructions.gif)
 
-Navigate to the course folder (Gut_brain_axis_course-Bioinformatic_analysis) and open the "install.R" file in Rstudio. Run the code by selecting all of the code and pressing run. 
+Navigate to the course folder (Neuroimmunological-methods-in-stroke-research-course-2024) and open the "install.R" file in Rstudio. Run the code by selecting all of the code and pressing run. 
 
 ![Alt text](img/installation_instructions.gif)  [](img/installation_instructions.gif)
 
@@ -37,10 +36,6 @@ If everything installed successfully, you should receive the following message:
 Please check everything works before the course starts on Wednesday the 14th.
 
 ## Course content 
-
-# Gut_brain_axis_course-Bioinformatic_analysis
-
-Data analysis part of the 2024 Gut_brain_axis_course-Bioinformatic_analysis - Wednesday 14/02/24
 
 ## Intro-to-R 
 
@@ -283,10 +278,8 @@ Now we understand a little bit of R we can move on to our first actual analysis.
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Gut_brain_axis_course - Intro to RNAseq analysis
-
-Today we will perform a fairly simple analysis of RNAseq data. This dataset comes
-from another lab in our institute, AG Liesz, and was published in 2020: https://www.jneurosci.org/content/40/5/1162.long. Here the authors treated mice with short-chain fatty acids (produced by the gut microbiota) after stroke and found that it improved recovery.
+We will now perform a fairly simple analysis of RNAseq data. This dataset comes
+from another lab in our institute, AG Liesz, and was published a few years back: https://www.jneurosci.org/content/40/5/1162.long. Here the authors treated mice with short-chain fatty acids (produced by the gut microbiota) after stroke and found that it improved recovery.
 
 
 Load the libraries: "DESeq2", "tidyverse", "EnhancedVolcano" and "clusterProfiler". 
@@ -460,11 +453,9 @@ How do your results compare to the original publication?
 
 ![Alt text](img/RNA_seq_original_res.jpg)  [](img/RNA_seq_original_res.jpg)
 
-# Gut_brain_axis_course-Bioinformatic_analysis
-
 ## Analysis of Microbiota data
 
-Here we will perform a very streamlined analysis of 16S rRNA sequencing data. This dataset comes from our lab and was published in 2022 [Sorbie et al, iScience 2022](https://www.sciencedirect.com/science/article/pii/S2589004222002681). 
+Here we will perform a very streamlined analysis of 16S rRNA sequencing data. This dataset comes from our lab and was published last year [Sorbie et al, iScience 2022](https://www.sciencedirect.com/science/article/pii/S2589004222002681). 
 
 ## Data Analysis 
 
