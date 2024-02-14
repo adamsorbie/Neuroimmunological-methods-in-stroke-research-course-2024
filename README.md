@@ -291,7 +291,7 @@ counts <- read_tsv("data/GSE131788_counts_upload.SCFA_treatment.refseq_mm10.txt"
   column_to_rownames("RefSeq") %>% 
   # deseq requires our data to be in matrix form 
   as.matrix()
-metadata <- read_tsv("../metadata_SCFA.txt")
+metadata <- read_tsv("data/metadata_SCFA.txt")
 ```
 Next we create a summarized experiment with the count data and sample metadata we just read in. A summarized experiment is an R object commonly used by bioconductor packages which simplifies and standardises storing genomic data in R.  
 ```{r}
