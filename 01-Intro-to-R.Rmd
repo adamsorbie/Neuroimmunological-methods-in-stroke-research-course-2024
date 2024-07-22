@@ -21,6 +21,7 @@ Subtraction
 
 ```
 
+
 Multiplication 
 ```{r}
 
@@ -38,14 +39,17 @@ Modulo
 
 Square
 ```{r}
-
+normalise(m)
 ```
+
+
+1 +1 
 
 ### Comparison
 
 Greater than
 ```{r}
-
+10 > 1
 ```
 
 Less than 
@@ -206,7 +210,10 @@ A few key concepts on loading and manipulating data.
 Reading data 
 
 ```{r}
-
+# load tidyverse
+library(tidyverse)
+# read in the palmer penguins csv file 
+penguins <- read_csv("data/penguins.csv")
 ```
 
 Manipulating data 
@@ -214,17 +221,28 @@ Manipulating data
 Selecting columns 
 
 ```{r}
-
+bill_length <- select(penguins, bill_length_mm) 
+print(bill_length)
 ```
 
 Filtering rows 
 
 ```{r}
+gentoo  <- filter(penguins, species == "Gentoo")
+print(gentoo)
+# with pipe 
+gentoo <- penguins %>%
+    filter(species == "Gentoo")
+print(gentoo)
 
+dplyr::select()
 ```
 
 Filtering and selecting in one with the pipe operator 
 
 ```{r}
-
+gentoo_bill_length <- penguins %>%
+    filter(species == "Gentoo") %>%
+    select(bill_length_mm)
+print(gentoo_bill_length)
 ```
