@@ -13,7 +13,6 @@ pacman::p_load(
   mixOmics,
   lemon,
   microbiome,
-  microViz,
   cowplot,
   Maaslin2
 )
