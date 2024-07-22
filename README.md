@@ -2,20 +2,12 @@
 
 ## Instructions 
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-PLEASE INSTALL ALL SOFTWARE WELL IN ADVANCE
-
-
 ## Download and install R and Rstudio
 
 Download and install the specific version of R for your OS [here:](https://ftp.fau.de/cran/)
-(If using Windows 10/11, install [Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools42/files/rtools42-5355-5357.exe) as well) 
+(If using Windows 10/11, please install [Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools42/files/rtools42-5355-5357.exe) as well) 
 
 Download and install [Rstudio](https://posit.co/download/rstudio-desktop/)
-
- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- PLEASE INSTALL PACKAGES ON THE DAY OF THE COURSE
-
 
 ### Before we begin 
 
@@ -414,6 +406,7 @@ plot_boxplot(alpha_div, variable_col = "condition", value_col = "Richness",
              comparisons_list = comparisons, fill_var = "condition", 
              group.order = c("sham", "stroke"), cols = colour_pal)
 ```
+![richness](https://github.com/user-attachments/assets/6fbb9f26-d19f-48e1-81a5-b615e5770e93)
 
 
 ```{r}
@@ -421,6 +414,9 @@ plot_boxplot(alpha_div, variable_col = "condition", value_col = "Shannon.Effecti
              comparisons_list = comparisons, fill_var = "condition", 
              group.order = c("sham", "stroke"), cols = colour_pal)
 ```
+![shannon_e](https://github.com/user-attachments/assets/0cb5fbaa-78a6-4909-82c9-ca0dfe34ed85)
+
+
 Do stroke and sham mice show any differences in alpha-diversity? 
 
 ## Microbiome composition
@@ -453,6 +449,9 @@ p <-
   )
 print(p)
 ```
+
+![taxonomic_comp](https://github.com/user-attachments/assets/70574641-cc7b-4290-a2bc-1e5fc3fe659b)
+
 
 Is the taxonomic composition of stroke and sham mice different at the species level? 
 
@@ -504,6 +503,8 @@ accompanying p-value denotes whether or not this effect is significant.
 ```{r}
 plot_beta_div(ps_rar, beta_div, group_variable = "condition",cols = colour_pal, add_ellipse = T)
 ```
+![betadiv](https://github.com/user-attachments/assets/b2533a80-6402-4a6d-968a-a893d4fdb138)
+
 What do you interpret from this plot? 
 
 ## Differential abundance
@@ -539,6 +540,9 @@ easier.
 ```{r, fig.height=8, fig.width=12}
 plot_da(da_taxa, groups = c("sham", "stroke"), cols = colour_pal)
 ```
+
+![da_taxa](https://github.com/user-attachments/assets/7b481ab3-6355-4633-9d58-75a1f4d9fd7e)
+
 What can we say about microbiome changes 3 days after experimental stroke?
 
 # Intro-to-RNAseq-analysis
