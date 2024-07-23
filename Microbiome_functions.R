@@ -14,7 +14,6 @@ pacman::p_load(
   lemon,
   microbiome,
   cowplot,
-  microViz,
   Maaslin2
 )
 
@@ -154,6 +153,27 @@ combine_meta <- function(meta_list, col_list) {
 
 t_df <- function(x) {
   return(as.data.frame(t(x)))
+}
+
+is_phyloseq(ps){
+  
+}
+
+ps_mutate <- function(ps, ...) {
+  
+  if(is(ps, "phyloseq")){
+    df <- meta_to_df(ps)
+    saved_rownames <- rownames(df)
+    df <- dplyr::mutate(df, ...)
+    rownames(df) <- saved_rownames
+    ps@sam_data <- phyloseq::sample_data(df) 
+  }
+  
+  else {
+    stop("Not a phyloseq object")
+  }
+  
+  return(ps)
 }
 
 #########################    IMPORTING DATA #########################

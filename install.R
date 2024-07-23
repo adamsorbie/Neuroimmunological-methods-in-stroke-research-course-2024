@@ -30,13 +30,10 @@ packages <- c(
   "vegan",
   "cowplot",
   "Maaslin2",
-  "zoo",
-  "microViz",
-  "remotes"
+  "zoo"
 )
 
 pacman::p_load(char = packages)
-remotes::install_github("david-barnett/microViz")
 uninstalled <- packages[!(packages %in% installed.packages()[, "Package"])]
 
 if (length(uninstalled) > 0) {
