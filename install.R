@@ -14,6 +14,7 @@ if (Sys.info()['sysname'] == "Windows") {
 if (!require("pacman")) {
   install.packages("pacman", repos = "http://cran.us.r-project.org")
 }
+
 packages <- c(
   "BiocManager",
   "tidyverse",
@@ -29,11 +30,13 @@ packages <- c(
   "vegan",
   "cowplot",
   "Maaslin2",
-  "zoo"
+  "zoo",
+  "microViz",
+  "remotes"
 )
 
 pacman::p_load(char = packages)
-
+remotes::install_github("david-barnett/microViz")
 uninstalled <- packages[!(packages %in% installed.packages()[, "Package"])]
 
 if (length(uninstalled) > 0) {

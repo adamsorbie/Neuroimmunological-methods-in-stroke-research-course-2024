@@ -14,6 +14,7 @@ pacman::p_load(
   lemon,
   microbiome,
   cowplot,
+  microViz,
   Maaslin2
 )
 
@@ -665,7 +666,7 @@ plot_taxonomic_comp  <- function(ps, tax_level, var, ord=NULL, n_taxa=10,
   
   if (!is.null(ord)) {
     ps <- ps %>%
-      ps_mutate(plot_var = factor(.data[[var]], levels = ord))
+     ps_mutate(plot_var = factor(.data[[var]], levels = ord))
   }
   
   if (agg == T){
