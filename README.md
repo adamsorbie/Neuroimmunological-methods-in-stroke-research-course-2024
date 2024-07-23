@@ -274,14 +274,14 @@ mouse stool. This dataset comes from our lab but is currently not published.
 
 Source the "Microbiome_functions.R" script. This contains functions for analysing shotgun metagenomic data which we will use today. 
 
-```{r}
+``` r
 source("Microbiome_functions.R")
 ```
 
 Firstly, we will read the species abundance table(s) and metadata into R, using
 phyloseq. 
 
-```{r}
+``` r
 ps <- import_pseq_metag("data/mouse_stool_abundances.txt","data/mouse_stool_metadata.txt", level = "Species")
 ```
 
@@ -297,7 +297,7 @@ perform a method called rarefaction for downstream analyses.
 
 ### Why do we need to normalise? 
 
-```{r}
+``` r
 barplot(sort(sample_sums(ps)), horiz = TRUE, las = 2, xlab=NULL, main="Library sizes")
 ```
 ![library_sizes](https://github.com/user-attachments/assets/73a51c10-84b2-4a4e-86bb-b76cabcbca9d)
@@ -308,21 +308,21 @@ barplot(sort(sample_sums(ps)), horiz = TRUE, las = 2, xlab=NULL, main="Library s
 Relative, transforms each sample into compositions, on a fixed scale of
 0-1 or 0-100.
 
-```{r}
+``` r
 ps_rel <- transform(ps)
 ```
 
 We can see how this works by looking at the column sums:
 
-```{r}
+``` r
 colSums(otu_table(ps_rel))
 ```
 Rarefaction, on the other hand, works by choosing a fixed number of samples equal to or less than the sample with the lowest number of reads, then randomly discarding reads from larger samples until the remaining sample size equals this threshold.
 
-```{r}
+``` r
 ps_rar <- rarefy_even_depth(ps, rngseed = 42)
 ```
-```{r}
+``` r
 colSums(otu_table(ps_rar))
 ```
 
@@ -337,7 +337,7 @@ The function `calc_alpha` wraps all of these calculations and only
 requires the rarified phyloseq object as input, returning a
 dataframe with a column for each above-mentioned dataframe.
 
-```{r}
+``` r
 alpha_div <- calc_alpha(ps_rar)
 ```
 
@@ -372,7 +372,7 @@ comparisons to define like so:
 `list(c("Control", "Sham"), c("Control", "Stroke"), c("Sham", "Stroke"))`
 
 
-```{r}
+``` r
 head(alpha_div)
 ```
 
@@ -380,14 +380,14 @@ head(alpha_div)
 
 Comparisons list
 
-```{r}
+``` r
 comparisons <- list(c("Stroke", "Sham"))
 ```
 
 We can also specify the colours we want to use in our plots here by
 creating a named vector of colours.
 
-```{r}
+``` r
 colour_pal <- c("sham" = "#98C1D9", "stroke"= "#EE6C4D")
 ```
 
@@ -404,7 +404,7 @@ explicitly with the `group.order`parameter.
 
 #### Richness
 
-```{r}
+``` r
 plot_boxplot(alpha_div, variable_col = "condition", value_col = "Richness", 
              comparisons_list = comparisons, fill_var = "condition", 
              group.order = c("sham", "stroke"), cols = colour_pal)
@@ -412,7 +412,7 @@ plot_boxplot(alpha_div, variable_col = "condition", value_col = "Richness",
 ![richness](https://github.com/user-attachments/assets/6fbb9f26-d19f-48e1-81a5-b615e5770e93)
 
 
-```{r}
+``` r
 plot_boxplot(alpha_div, variable_col = "condition", value_col = "Shannon.Effective", 
              comparisons_list = comparisons, fill_var = "condition", 
              group.order = c("sham", "stroke"), cols = colour_pal)
@@ -439,7 +439,7 @@ the taxonomic level we would like to plot, in this case species. In addition,
 we need to supply the group column (without quotes), 
 the number of species we would like to plot and can additionally specify several additional 
 parameters to customise the order and calculation of the most abundant taxa.
-```{r, fig.height=6, fig.width=11}
+``` r
 p <-
   plot_taxonomic_comp(
     ps_rel,
@@ -485,7 +485,7 @@ Similarly, there are also various ordination options:
     preserve distance between samples in a low dimensional Euclidean
     space.
 
-```{r, include=FALSE}
+``` r
 beta_div <- calc_betadiv(ps_rar, dist = "bray", ord_method = "NMDS")
 ```
 
@@ -503,7 +503,7 @@ The adonis R<sup>2</sup> represents the amount of variance in microbiome
 composition explained by the variable being tested, in this case condition. The
 accompanying p-value denotes whether or not this effect is significant. 
 
-```{r}
+``` r
 plot_beta_div(ps_rar, beta_div, group_variable = "condition",cols = colour_pal, add_ellipse = T)
 ```
 ![betadiv](https://github.com/user-attachments/assets/b2533a80-6402-4a6d-968a-a893d4fdb138)
@@ -520,7 +520,7 @@ differential abundance method and returns significant results. As input,
 only the phyloseq object and the column name of the grouping variable is
 required.
 
-```{r, include=FALSE}
+``` r
 da_taxa <- maaslin2_tax(
     ps_rel,
     out = "microbiome_DA_results",
@@ -540,7 +540,7 @@ above, an ordered vector of the group levels e.g. ```c("Sham", "Stroke")```.
 Additionally, we can provide the group colours to make interpretation
 easier.
 
-```{r, fig.height=8, fig.width=12}
+``` r
 plot_da(da_taxa, groups = c("sham", "stroke"), cols = colour_pal)
 ```
 
@@ -557,7 +557,7 @@ from another lab in our institute, AG Liesz, and was published a few years back:
 Load the libraries: "DESeq2", "tidyverse", "EnhancedVolcano" and "clusterProfiler". 
 Use the source function to source the "RNAseq_functions.R" file in the current working directory. 
 
-```{r}
+``` r
 library(EnhancedVolcano)
 library(DESeq2)
 library(tidyverse)
@@ -568,7 +568,8 @@ source("RNAseq_functions.R")
 ### Loading data 
 
 Firstly we will read in the counts file and sample metadata using the ```read_tsv``` function from "readr", part of the "tidyverse". 
-```{r}
+
+``` r
 counts <- read_tsv("data//GSE131788_counts_upload.SCFA_treatment.refseq_mm10.txt") %>% 
   # since we require our data to be numerical we need to move the first column to the rownames
   column_to_rownames("RefSeq") %>% 
@@ -577,7 +578,8 @@ counts <- read_tsv("data//GSE131788_counts_upload.SCFA_treatment.refseq_mm10.txt
 metadata <- read_tsv("data//metadata_SCFA.txt")
 ```
 Next we create a summarized experiment with the count data and sample metadata we just read in. A summarized experiment is an R object commonly used by bioconductor packages which simplifies and standardises storing genomic data in R.  
-```{r}
+
+``` r
 se <- SummarizedExperiment(assays=list(counts=counts),colData = metadata)
 ```
 
@@ -592,12 +594,12 @@ In our case the dependent variable or y, is the expression of a gene.
 
 Create a DESeq2 object called ```dds```using the DESeqDataSet function. 
 
-```{r}
+``` r
 dds <- DESeqDataSet(se, design = ~ treatment)
 ```
 Although not strictly necessary, we can also remove genes with low counts across samples to speed up computation and filter unimportant features. Since the assay is just a matrix we can extract it with the ```counts``` function and use ```rowSums``` to calculate which indices are above a given sum, in this case: 10. 
 
-```{r}
+``` r
 keep <- rowSums(counts(dds)) >= 10
 dds <- dds[keep,]
 ```
@@ -608,7 +610,7 @@ Often we want to see how similar or different our samples are. A simple way to
 do this, is to use principal component analysis or PCA. PCA attempts to find a 
 linear combination of variables which best explain the variation in the data.  
 
-```{r}
+``` r
 vsd <- vst(dds, blind = T, fitType = "local")
 plotPCA(vsd, intgroup=c("treatment")) + 
   theme_bw()
@@ -631,20 +633,20 @@ uses a method called shrinkage to estimate more accurate estimates of variation 
 used in the final model. Finally, DESeq2 fits a negative binomial model to the data
 and tests for differences in gene expression using a Wald test (default settings).
 
-```{r}
+``` r
 dds <- DESeq(dds)
 ```
 To access the DESeq results call the results function with the DESeq2 object ```dds```` as 
 an argument.
 
-```{r}
+``` r
 res <- results(dds)
 ```
 
 Using the custom function ```annotate_degs``` let's add gene names and descriptions 
 to our table. 
 
-```{r}
+``` r
 res_annot <- annotate_degs(org.Mm.eg.db, res, keys = row.names(res), 
                            keytype = "REFSEQ", multivals = "first") %>% 
 as.data.frame()
@@ -655,7 +657,8 @@ package makes this very easy but the default plots are not always the nicest/mos
 interpretable
 
 Plot volcano using default settings 
-```{r}
+
+``` r
 EnhancedVolcano(res_annot,lab = res_annot$gene_symbol, x = "log2FoldChange", y = "padj")
 ```
 
@@ -670,7 +673,7 @@ Additionally, we can specify, foldchange and adjusted p-value thresholds, remove
 titles,captions and legend and then adjust the limits of the x-axis and now our
 plot looks a lot better. 
 
-```{r}
+``` r
 keyvals <- ifelse(
   res_annot$log2FoldChange < -1 & res_annot$padj < 0.1, 'dodgerblue',
     ifelse(res_annot$log2FoldChange > 1 & res_annot$padj < 0.1, 'firebrick1',
@@ -701,7 +704,7 @@ whether any of these categories are overrepresented compared to background.
 Firstly, we remove any NA values from our DESeq2 results and create a background
 of all the genes included in our differential expression test. 
 
-```{r}
+``` r
 res_annot_noNA <-  res_annot %>% 
   drop_na(padj)
 ## Create background dataset for hypergeometric testing using all tested genes for significance in the results                 
@@ -711,7 +714,7 @@ Secondly, we extract the genes which were significantly different between
 the SCFA and Control group. Since we have relatively few genes we are using a more
 relaxed adjusted p-value filter of 0.1 and not filtering based on fold change. 
 
-```{r}
+``` r
 ## Extract significant results
 sigOE_genes <- res_annot_noNA %>% 
   filter(padj < 0.1) %>% 
@@ -720,7 +723,7 @@ sigOE_genes <- res_annot_noNA %>%
 Next we will perform the enrichment analysis using the ```enrichGO``` function
 from the "clusterProfiler" package. 
 
-```{r}
+``` r
 ## Run GO enrichment analysis 
 ego <- enrichGO(gene = sigOE_genes, 
                 universe = allOE_genes,
@@ -735,7 +738,7 @@ ego <- enrichGO(gene = sigOE_genes,
 Let's plot the results using the ```dotplot``` function, by providing our enrichment
 results from above as an argument. 
 
-```{r}
+``` r
 dotplot(ego)
 ```
 
