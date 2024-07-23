@@ -453,8 +453,7 @@ p <-
 print(p)
 ```
 
-![taxonomic_comp](https://github.com/user-attachments/assets/70574641-cc7b-4290-a2bc-1e5fc3fe659b)
-
+![taxonomic_comp](https://github.com/user-attachments/assets/1c2e2b21-b381-401b-8059-431c53a41d95)
 
 Is the taxonomic composition of stroke and sham mice different at the species level? 
 
