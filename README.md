@@ -272,6 +272,8 @@ mouse stool. This dataset comes from our lab but is currently not published.
 
 ## Data Analysis 
 
+Source the "Microbiome_functions.R" script. This contains functions for analysing shotgun metagenomic data which we will use today. 
+
 ```{r}
 source("Microbiome_functions.R")
 ```
@@ -298,6 +300,7 @@ perform a method called rarefaction for downstream analyses.
 ```{r}
 barplot(sort(sample_sums(ps)), horiz = TRUE, las = 2, xlab=NULL, main="Library sizes")
 ```
+![library_sizes](https://github.com/user-attachments/assets/73a51c10-84b2-4a4e-86bb-b76cabcbca9d)
 
 ### How does normalisation work?
 
@@ -547,10 +550,6 @@ What can we say about microbiome changes 3 days after experimental stroke?
 
 # Intro-to-RNAseq-analysis
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 We will now perform a fairly simple analysis of RNAseq data. This dataset comes
 from another lab in our institute, AG Liesz, and was published a few years back: https://www.jneurosci.org/content/40/5/1162.long. Here the authors treated mice with short-chain fatty acids (produced by the gut microbiota) after stroke and found that it improved recovery.
 
@@ -570,12 +569,12 @@ source("RNAseq_functions.R")
 
 Firstly we will read in the counts file and sample metadata using the ```read_tsv``` function from "readr", part of the "tidyverse". 
 ```{r}
-counts <- read_tsv("../GSE131788_counts_upload.SCFA_treatment.refseq_mm10.txt") %>% 
+counts <- read_tsv("data//GSE131788_counts_upload.SCFA_treatment.refseq_mm10.txt") %>% 
   # since we require our data to be numerical we need to move the first column to the rownames
   column_to_rownames("RefSeq") %>% 
   # deseq requires our data to be in matrix form 
   as.matrix()
-metadata <- read_tsv("../metadata_SCFA.txt")
+metadata <- read_tsv("data//metadata_SCFA.txt")
 ```
 Next we create a summarized experiment with the count data and sample metadata we just read in. A summarized experiment is an R object commonly used by bioconductor packages which simplifies and standardises storing genomic data in R.  
 ```{r}
@@ -615,7 +614,9 @@ plotPCA(vsd, intgroup=c("treatment")) +
   theme_bw()
 ```
 
-  What does the PCA tell us? 
+![PCA](https://github.com/user-attachments/assets/30c1a97d-be08-4a12-8691-98b3e4af9a61)
+
+What does the PCA tell us? 
 
 
 ### Differential expression - which genes differ between conditions? 
@@ -657,6 +658,10 @@ Plot volcano using default settings
 ```{r}
 EnhancedVolcano(res_annot,lab = res_annot$gene_symbol, x = "log2FoldChange", y = "padj")
 ```
+
+![volcano](https://github.com/user-attachments/assets/e6aa0135-4ffb-4652-83fa-4d33491313dc)
+
+
 Let's tidy it up a bit by adding a few extra arguments and generating key-value
 pairs for the colour scheme so that SCFA enriched genes are coloured in red and 
 those enriched in the control group are coloured in blue. 
@@ -679,6 +684,10 @@ EnhancedVolcano(res_annot, lab = res_annot$gene_symbol, x = "log2FoldChange", y 
                 FCcutoff = 1, xlim = c(-10, 10), title = NULL, subtitle = NULL, caption = NULL, 
                  colCustom = keyvals,colAlpha = 1, legendPosition = "None")
 ```
+
+![volcano_edit](https://github.com/user-attachments/assets/7a3eaf4b-83fe-4284-8a5b-54844dfb72fc)
+
+
 ### Gene Ontology 
 
 Although here we only have a handful of significantly regulated genes in many
@@ -725,9 +734,14 @@ ego <- enrichGO(gene = sigOE_genes,
 
 Let's plot the results using the ```dotplot``` function, by providing our enrichment
 results from above as an argument. 
+
 ```{r}
 dotplot(ego)
 ```
+
+![GO_dotplot](https://github.com/user-attachments/assets/2edc39da-510e-4cdb-b086-a98896b14700)
+
+
 How do your results compare to the original publication? 
 
 ![Alt text](img/RNA_seq_original_res.jpg)  [](img/RNA_seq_original_res.jpg)
